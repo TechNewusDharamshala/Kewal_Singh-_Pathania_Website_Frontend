@@ -194,10 +194,11 @@
       }
       .btn-primary {
         background: var(--navy);
-        color: #fff;
+        color: var(--saffron-deep) !important;
       }
       .btn-primary:hover {
         background: var(--saffron-deep);
+         color: var(--navy) !important;
         transform: translateY(-1px);
       }
       .btn-outline {
@@ -508,6 +509,18 @@
         font-size: 0.9rem;
         margin-top: 10px;
       }
+      .why-card .hi {
+        border-top: 1px solid var(--rule);
+        padding-top: 10px;
+      }
+      .why-card h3 .hi {
+        display: block;
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 4px;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
       .why-card:nth-child(even) .wnum {
         color: var(--green-deep);
       }
@@ -545,6 +558,18 @@
         color: var(--ink-soft);
         font-size: 0.88rem;
         margin-top: 8px;
+      }
+      .init-card .hi {
+        border-top: 1px solid var(--rule);
+        padding-top: 8px;
+      }
+      .init-card h3 .hi {
+        display: block;
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 4px;
+        font-size: 0.94rem;
+        font-weight: 500;
       }
       .init-card .rm {
         display: inline-block;
@@ -591,6 +616,24 @@
         font-size: 0.86rem;
         margin-top: 8px;
       }
+      .news-card .hi {
+        display: block;
+        border-top: 1px solid var(--rule);
+        padding-top: 8px;
+      }
+      .news-card h3 .hi {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 5px;
+        font-size: 0.94rem;
+        font-weight: 500;
+      }
+      .news-date .hi {
+        display: inline;
+        border-top: 0;
+        padding-top: 0;
+        margin-left: 8px;
+      }
       .news-card a.rm {
         display: inline-block;
         margin-top: 12px;
@@ -601,19 +644,57 @@
       }
 
       .facebook-feed {
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none;
+        width: 100%;
+        background: linear-gradient(135deg, #ffffff 0%, #fdf8ef 100%);
+        border: 1px solid rgba(11, 33, 69, 0.12);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: 0 24px 60px -28px rgba(11, 33, 69, 0.38);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .facebook-feed:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 30px 70px -24px rgba(11, 33, 69, 0.46);
+        border-color: var(--saffron);
       }
       .facebook-feed .fb-page,
       .facebook-feed .fb-page iframe {
         width: 100% !important;
+        max-width: 100%;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .facebook-feed .fb-page iframe {
+        min-height: 720px;
       }
 
       section#facebook-feed {
-        background: var(--paper);
+        background: linear-gradient(180deg, var(--paper) 0%, var(--paper-dim) 100%);
+      }
+      section#facebook-feed .wrap {
+        max-width: var(--max);
+        width: 100%;
+      }
+      .facebook-gallery-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--saffron-deep);
+      }
+      .facebook-gallery-label::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--saffron-deep);
+        display: inline-block;
       }
 
       /* CTA BAND */
@@ -754,8 +835,8 @@
     <div class="topbar">
       <div class="wrap">
         <div class="tb-links">
-          <a href="tel:">Shahpur Constituency Office</a>
-          <a href="mailto:">Add contact email</a>
+          <a href="tel:9418034500">Call: 9418034500</a>
+          <a href="mailto:kewalpathania97@gmail.com">kewalpathania97@gmail.com</a>
         </div>
         <div class="tb-links">
           <a
@@ -976,56 +1057,84 @@
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow">Why choose Kewal Pathania</div>
-          <h2>Shahpur First</h2>
-          <p>A track record built on presence, not just promises.</p>
+          <div class="eyebrow" lang="hi">केवल पठानिया को क्यों चुनें</div>
+          <h2>Shahpur First <span lang="hi">— शाहपुर पहले</span></h2>
+          <p>
+            A track record built on presence, not just promises.
+            <span lang="hi">वादों से नहीं, जनता के बीच सक्रिय मौजूदगी से बना कार्य-रिकॉर्ड।</span>
+          </p>
         </div>
         <div class="why-grid">
           <div class="why-card">
             <div class="wnum">01</div>
-            <h3>Proven Track Record</h3>
-            <p>
+            <h3>Proven Track Record <span class="hi" lang="hi">विकास का प्रमाणित रिकॉर्ड</span></h3>
+            <p lang="en">
               ₹4 crore sanctioned for an additional hospital building and ₹10
               crore for an indoor sports complex and shopping mall in Shahpur.
+            </p>
+            <p class="hi" lang="hi">
+              शाहपुर में अस्पताल के अतिरिक्त भवन के लिए ₹4 करोड़ और इंडोर
+              स्पोर्ट्स कॉम्प्लेक्स व शॉपिंग मॉल के लिए ₹10 करोड़ स्वीकृत।
             </p>
           </div>
           <div class="why-card">
             <div class="wnum">02</div>
-            <h3>Comprehensive Vision</h3>
-            <p>
+            <h3>Comprehensive Vision <span class="hi" lang="hi">समग्र विकास का विज़न</span></h3>
+            <p lang="en">
               A development agenda spanning tourism, farming, healthcare and
               employment — not one issue at a time.
+            </p>
+            <p class="hi" lang="hi">
+              पर्यटन, कृषि, स्वास्थ्य और रोज़गार को साथ लेकर चलने वाला विकास
+              एजेंडा — एक समय में केवल एक मुद्दे तक सीमित नहीं।
             </p>
           </div>
           <div class="why-card">
             <div class="wnum">03</div>
-            <h3>Always Accessible</h3>
-            <p>
+            <h3>Always Accessible <span class="hi" lang="hi">हर समय उपलब्ध</span></h3>
+            <p lang="en">
               Known locally for meeting constituents directly and resolving
               issues on the spot, without layers of hierarchy.
+            </p>
+            <p class="hi" lang="hi">
+              क्षेत्र के लोगों से सीधे मिलने और बिना किसी लंबी प्रक्रिया के
+              उनकी समस्याओं का मौके पर समाधान करने के लिए जाने जाते हैं।
             </p>
           </div>
           <div class="why-card">
             <div class="wnum">04</div>
-            <h3>Legislative Experience</h3>
-            <p>
+            <h3>Legislative Experience <span class="hi" lang="hi">विधायी अनुभव</span></h3>
+            <p lang="en">
               Deputy Chief Whip of the Himachal Pradesh Vidhan Sabha, with a
               voice in state-level policy and governance.
+            </p>
+            <p class="hi" lang="hi">
+              हिमाचल प्रदेश विधानसभा के उप मुख्य सचेतक के रूप में राज्य-स्तरीय
+              नीति और शासन में सक्रिय भूमिका।
             </p>
           </div>
           <div class="why-card">
             <div class="wnum">05</div>
-            <h3>Roots in Public Service</h3>
-            <p>
+            <h3>Roots in Public Service <span class="hi" lang="hi">जनसेवा से जुड़ा सफ़र</span></h3>
+            <p lang="en">
               Nearly four decades of work, starting from student politics in
               1987 to representing Shahpur today.
+            </p>
+            <p class="hi" lang="hi">
+              1987 में छात्र राजनीति से शुरू हुआ लगभग चार दशकों का सफ़र,
+              आज शाहपुर का प्रतिनिधित्व करने तक।
             </p>
           </div>
           <div class="why-card">
             <div class="wnum">06</div>
-            <h3>Equal Development</h3>
-            <p>
+            <h3>Equal Development <span class="hi" lang="hi">समान विकास</span></h3>
+            <p lang="en">
               A stated focus on bringing modern facilities to every ward and
               household across the constituency.
+            </p>
+            <p class="hi" lang="hi">
+              पूरे निर्वाचन क्षेत्र के हर वार्ड और हर परिवार तक आधुनिक
+              सुविधाएँ पहुँचाने पर विशेष ध्यान।
             </p>
           </div>
         </div>
@@ -1036,76 +1145,102 @@
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow">Initiatives</div>
-          <h2>Transforming Shahpur Together</h2>
+          <div class="eyebrow" lang="hi">पहल</div>
+          <h2>Transforming Shahpur Together <span lang="hi">— मिलकर बदलता शाहपुर</span></h2>
           <p>
             Key projects and priorities shaping the constituency's next phase.
+            <span lang="hi">क्षेत्र के अगले चरण को आकार देने वाली प्रमुख परियोजनाएँ और प्राथमिकताएँ।</span>
           </p>
         </div>
         <div class="init-grid">
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Kangra Airport Expansion</h3>
-              <p>
+              <h3>Kangra Airport Expansion <span class="hi" lang="hi">कांगड़ा हवाई अड्डे का विस्तार</span></h3>
+              <p lang="en">
                 Backing the expansion project as a driver of tourism and
                 connectivity for the whole district.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                पूरे ज़िले में पर्यटन और कनेक्टिविटी को बढ़ावा देने के लिए
+                विस्तार परियोजना का समर्थन।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Zipline &amp; Adventure Tourism</h3>
-              <p>
+              <h3>Zipline &amp; Adventure Tourism <span class="hi" lang="hi">ज़िपलाइन और साहसिक पर्यटन</span></h3>
+              <p lang="en">
                 Supporting zipline and adventure-tourism projects to position
                 Kangra as the state's tourism capital.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                कांगड़ा को प्रदेश की पर्यटन राजधानी बनाने के लिए ज़िपलाइन और
+                साहसिक पर्यटन परियोजनाओं का समर्थन।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Natural Farming Push</h3>
-              <p>
+              <h3>Natural Farming Push <span class="hi" lang="hi">प्राकृतिक खेती को बढ़ावा</span></h3>
+              <p lang="en">
                 Promoting natural farming and better milk procurement prices for
                 farming households.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                किसान परिवारों के लिए प्राकृतिक खेती और दूध के बेहतर खरीद
+                मूल्य को बढ़ावा।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Old Pension Scheme</h3>
-              <p>
+              <h3>Old Pension Scheme <span class="hi" lang="hi">पुरानी पेंशन योजना</span></h3>
+              <p lang="en">
                 Supporting the restoration of OPS and expansion of healthcare
                 facilities across Shahpur.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                पुरानी पेंशन योजना (OPS) की बहाली और पूरे शाहपुर में स्वास्थ्य
+                सुविधाओं के विस्तार का समर्थन।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Hospital &amp; Sports Complex</h3>
-              <p>
+              <h3>Hospital &amp; Sports Complex <span class="hi" lang="hi">अस्पताल और खेल परिसर</span></h3>
+              <p lang="en">
                 ₹14 crore sanctioned for a new hospital building and an indoor
                 sports and shopping complex.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                नए अस्पताल भवन तथा इंडोर खेल और शॉपिंग कॉम्प्लेक्स के लिए
+                ₹14 करोड़ स्वीकृत।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
           <div class="init-card">
             <div class="init-top"></div>
             <div class="init-body">
-              <h3>Local Body Strengthening</h3>
-              <p>
+              <h3>Local Body Strengthening <span class="hi" lang="hi">स्थानीय निकायों को सशक्त बनाना</span></h3>
+              <p lang="en">
                 Working with newly elected Nagar Panchayat councillors across
                 all wards on ground-level delivery.
               </p>
-              <span class="rm">Read more →</span>
+              <p class="hi" lang="hi">
+                सभी वार्डों में ज़मीनी स्तर पर विकास कार्यों के लिए नवनिर्वाचित
+                नगर पंचायत पार्षदों के साथ काम।
+              </p>
+              <span class="rm">Read more → <span lang="hi">और पढ़ें</span></span>
             </div>
           </div>
         </div>
@@ -1116,62 +1251,87 @@
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow">Latest News</div>
-          <h2>From the constituency</h2>
+          <div class="eyebrow" lang="hi">ताज़ा ख़बरें</div>
+          <h2>From the constituency <span lang="hi">— शाहपुर से</span></h2>
         </div>
         <div class="news-grid">
           <div class="news-card">
             <div class="news-body">
-              <div class="news-date">May 2026</div>
+              <div class="news-date">May 2026 <span class="hi" lang="hi">मई 2026</span></div>
               <h3>
                 ULB election results read as a mandate for the Sukhu
                 government's development model
+                <span class="hi" lang="hi">
+                  नगर निकाय चुनाव के नतीजे सुक्खू सरकार के विकास मॉडल के समर्थन
+                  के रूप में देखे गए
+                </span>
               </h3>
-              <p>
+              <p lang="en">
                 Pathania credited the outcome to public trust in welfare
                 schemes, natural farming support and infrastructure work across
                 Kangra.
+              </p>
+              <p class="hi" lang="hi">
+                पठानिया ने इस नतीजे का श्रेय जनकल्याणकारी योजनाओं, प्राकृतिक
+                खेती को समर्थन और कांगड़ा में हुए बुनियादी ढाँचे के कामों पर
+                जनता के भरोसे को दिया।
               </p>
               <a
                 class="rm"
                 href="https://aninews.in/news/national/general-news/ulb-poll-results-reflect-faith-in-sukhu-government-congress-mla-kewal-singh-pathania20260519220253/"
                 target="_blank"
                 rel="noopener"
-                >Source: ANI ↗</a
+                >Source: ANI <span lang="hi">स्रोत: एएनआई</span> ↗</a
               >
             </div>
           </div>
           <div class="news-card">
             <div class="news-body">
-              <div class="news-date">May 2026</div>
-              <h3>Historic ₹14 crore in grants sanctioned for Shahpur</h3>
-              <p>
+              <div class="news-date">May 2026 <span class="hi" lang="hi">मई 2026</span></div>
+              <h3>
+                Historic ₹14 crore in grants sanctioned for Shahpur
+                <span class="hi" lang="hi">शाहपुर के लिए ₹14 करोड़ की ऐतिहासिक राशि स्वीकृत</span>
+              </h3>
+              <p lang="en">
                 Newly elected Nagar Panchayat councillors met the MLA to discuss
                 equal development plans across all seven wards.
+              </p>
+              <p class="hi" lang="hi">
+                नवनिर्वाचित नगर पंचायत पार्षदों ने सभी सात वार्डों में समान
+                विकास योजनाओं पर चर्चा के लिए विधायक से मुलाकात की।
               </p>
               <a
                 class="rm"
                 href="https://thenewzradar.com/himachal-pradesh/shahpur-to-become-no-1-in-development-mla-kewal-singh-pathania/"
                 target="_blank"
                 rel="noopener"
-                >Source: TNR News ↗</a
+                >Source: TNR News <span lang="hi">स्रोत: टीएनआर न्यूज़</span> ↗</a
               >
             </div>
           </div>
           <div class="news-card">
             <div class="news-body">
-              <div class="news-date">July 2026</div>
-              <h3>Raising his voice for Himachali artists at state fairs</h3>
-              <p>
+              <div class="news-date">July 2026 <span class="hi" lang="hi">जुलाई 2026</span></div>
+              <h3>
+                Raising his voice for Himachali artists at state fairs
+                <span class="hi" lang="hi">राज्य मेलों में हिमाचली कलाकारों के लिए आवाज़ उठाई</span>
+              </h3>
+              <p lang="en">
                 Pathania publicly urged fairer stage time and pay for local
                 performers, calling for expert-led artist selection at state
                 fairs.
+              </p>
+              <p class="hi" lang="hi">
+                पठानिया ने स्थानीय कलाकारों के लिए मंच पर उचित समय और पारिश्रमिक
+                देने की सार्वजनिक मांग की और राज्य मेलों में विशेषज्ञों के
+                माध्यम से कलाकारों के चयन का आग्रह किया।
               </p>
               <a
                 class="rm"
                 href="https://himachalheadlines.com/news/kewal-singh-pathania-expressed-his-pain-over-the-neglect-of-himachali-artists/"
                 target="_blank"
                 rel="noopener"
-                >Source: Himachal Headlines ↗</a
+                >Source: Himachal Headlines <span lang="hi">स्रोत: हिमाचल हेडलाइंस</span> ↗</a
               >
             </div>
           </div>
@@ -1262,8 +1422,9 @@
             <h4>Get in Touch</h4>
             <ul>
               <li>Shahpur, Kangra District, Himachal Pradesh</li>
-              <li>Add office email here</li>
-              <li>Add office phone here</li>
+              <li>Office: <a href="tel:2621336">2621336</a></li>
+              <li>Mobile: <a href="tel:9418034500">9418034500</a></li>
+              <li>Email: <a href="mailto:kewalpathania97@gmail.com">kewalpathania97@gmail.com</a></li>
             </ul>
           </div>
         </div>
